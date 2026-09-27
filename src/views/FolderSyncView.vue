@@ -1621,7 +1621,7 @@ watch(
             >
               <Funnel
                 class="folder-filter-strip-icon"
-                :size="16"
+                :size="14"
                 :stroke-width="2.25"
                 absolute-stroke-width
                 aria-hidden="true"

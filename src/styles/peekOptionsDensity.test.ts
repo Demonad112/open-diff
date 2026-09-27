@@ -222,3 +222,9 @@ describe('peek button fill', () => {
     expect(css).toMatch(/\.folder-peek-panel header button,[\s\S]*?background:\s*#f0f0f0/)
   })
 })
+
+describe('filter strip glyph', () => {
+  it('sizes Folder filter/Peek strip Lucide glyphs to capture 14px', () => {
+    expect(folderView).toMatch(/folder-filter-strip-icon[\s\S]*?:size="14"/)
+  })
+})
