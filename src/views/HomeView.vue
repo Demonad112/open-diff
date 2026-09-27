@@ -1182,7 +1182,7 @@ onMounted(() => {
   padding: 0 8px;
   overflow: hidden;
   border-bottom: 1px solid #c6ccd5;
-  background: #eef1f5;
+  background: #ededed;
   color: #111827;
   font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
   font-size: 12px;
