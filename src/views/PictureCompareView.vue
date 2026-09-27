@@ -1041,6 +1041,37 @@ async function runPictureCompare(): Promise<void> {
               </div>
             </div>
           </label>
+          <label class="picture-tol-overlay-label">
+            <span data-testid="picture-tolerance-overlay-caption"
+              >{{ $t('ui.tolerance') }}: {{ rgbTolerance }}</span
+            >
+            <div class="picture-zoom-overlay-row">
+              <input
+                v-model.number="rgbTolerance"
+                type="range"
+                min="0"
+                max="255"
+                step="1"
+                data-testid="picture-tolerance-overlay-control"
+                @change="persistPictureOptions"
+              />
+              <div class="picture-zoom-mode-tools">
+                <button
+                  type="button"
+                  class="picture-zoom-mode-btn picture-tol-glyph-btn"
+                  :class="{ 'picture-zoom-mode-btn-active': showTolPanel }"
+                  data-testid="picture-tolerance-overlay-glyph"
+                  :title="$t('ui.tol')"
+                  @click="showTolPanel = !showTolPanel"
+                >
+                  <span
+                    class="picture-tol-glyph"
+                    aria-hidden="true"
+                  ></span>
+                </button>
+              </div>
+            </div>
+          </label>
           <label>
             <span>{{ $t('ui.panX') }}</span>
             <input
@@ -1674,11 +1705,25 @@ h2 {
   color: #f0f0f0;
 }
 
-.picture-controls[data-overlay-compact='capture-1to1'] > label:not(.picture-zoom-overlay-label),
+.picture-controls[data-overlay-compact='capture-1to1']
+  > label:not(.picture-zoom-overlay-label, .picture-tol-overlay-label),
 .picture-controls[data-overlay-compact='capture-1to1'] > .picture-transform-tools,
 .picture-controls[data-overlay-compact='capture-1to1'] > .picture-alignment-controls,
 .picture-controls[data-overlay-compact='capture-1to1'] > .picture-pixel-preview {
   display: none;
+}
+
+.picture-tol-overlay-label {
+  display: grid;
+  gap: 2px;
+}
+
+.picture-tol-glyph {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #111111;
+  background: linear-gradient(135deg, #ffffff 0%, #111111 100%);
 }
 
 .picture-offset-overlay-caption {

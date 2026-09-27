@@ -192,3 +192,16 @@ describe('picture stage overlay compact', () => {
     )
   })
 })
+
+describe('picture stage Tolerance compact', () => {
+  it('keeps compact Tolerance slider chrome on the Offset/Zoom capture band', () => {
+    expect(pictureView).toMatch(/picture-tol-overlay-label/)
+    expect(pictureView).toMatch(/data-testid="picture-tolerance-overlay-caption"/)
+    expect(pictureView).toMatch(/data-testid="picture-tolerance-overlay-control"/)
+    expect(pictureView).toMatch(/data-testid="picture-tolerance-overlay-glyph"/)
+    expect(pictureView).toMatch(/\.picture-tol-glyph\s*\{[\s\S]*?width:\s*12px/)
+    expect(pictureView).toMatch(
+      /label:not\(\.picture-zoom-overlay-label, \.picture-tol-overlay-label\)/,
+    )
+  })
+})

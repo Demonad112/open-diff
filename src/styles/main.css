@@ -2418,7 +2418,7 @@ html[data-show-path-bars='0'] .path-pair-bar {
 
 .picture-compare-view
   .picture-controls[data-overlay-compact='capture-1to1']
-  > label:not(.picture-zoom-overlay-label),
+  > label:not(.picture-zoom-overlay-label, .picture-tol-overlay-label),
 .picture-compare-view
   .picture-controls[data-overlay-compact='capture-1to1']
   > .picture-transform-tools,
@@ -2429,6 +2429,11 @@ html[data-show-path-bars='0'] .path-pair-bar {
   .picture-controls[data-overlay-compact='capture-1to1']
   > .picture-pixel-preview {
   display: none !important;
+}
+
+.picture-compare-view .picture-tol-glyph {
+  width: 12px !important;
+  height: 12px !important;
 }
 
 .picture-compare-view .picture-zoom-mode-btn {
