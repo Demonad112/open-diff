@@ -1246,7 +1246,7 @@ onMounted(() => {
   gap: 3px;
   padding: 2px 4px;
   border-top: 1px solid #c6ccd5;
-  background: #eef1f5;
+  background: #fdfdfd;
 }
 
 .bc-tree-footer button {
