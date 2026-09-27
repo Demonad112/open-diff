@@ -110,3 +110,9 @@ describe('home session-tree header fill', () => {
     expect(homeView).toMatch(/\.bc-session-tree header\s*\{[\s\S]*?background:\s*#ededed/)
   })
 })
+
+describe('home session-tree footer fill', () => {
+  it('matches capture session-tree footer fill #fdfdfd', () => {
+    expect(homeView).toMatch(/\.bc-tree-footer\s*\{[\s\S]*?background:\s*#fdfdfd/)
+  })
+})
