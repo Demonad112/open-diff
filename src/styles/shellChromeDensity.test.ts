@@ -226,3 +226,11 @@ describe('panel border-color', () => {
     expect(mainCss).toMatch(/\.profile-detail-panel \{[\s\S]*?border-color:\s*#c0c0c0/)
   })
 })
+
+describe('about body font residual', () => {
+  const source = readFileSync(resolve(__dirname, '../layouts/AppLayout.vue'), 'utf8')
+
+  it('keeps About dialog body text on capture 11px band', () => {
+    expect(source).toMatch(/\.about-dialog p\s*\{[\s\S]*?font-size:\s*11px/)
+  })
+})

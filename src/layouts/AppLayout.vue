@@ -3211,7 +3211,8 @@ html[data-show-sidebar='1'] .sidebar {
 
 .about-dialog p {
   margin: 0;
-  font-size: 12px;
+  font-size: 11px;
+  line-height: 16px;
 }
 
 .about-dialog button {
