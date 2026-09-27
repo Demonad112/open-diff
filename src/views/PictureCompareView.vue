@@ -1955,7 +1955,7 @@ h2 {
   top: 4px;
   left: 4px;
   z-index: 5;
-  display: grid;
+  display: none;
   gap: 4px;
   width: min(240px, calc(100% - 8px));
   padding: 4px 6px;

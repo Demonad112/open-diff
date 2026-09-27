@@ -214,3 +214,10 @@ describe('picture zoom mode btn size', () => {
     expect(css).toMatch(/\.picture-compare-view \.picture-zoom-mode-btn\s*\{[\s\S]*?height:\s*26px/)
   })
 })
+
+describe('hide rich tol overlay', () => {
+  it('hides rich Tol overlay toward capture compact Tolerance band', () => {
+    expect(pictureView).toMatch(/\.picture-tol-overlay\s*\{[\s\S]*?display:\s*none/)
+    expect(css).toMatch(/\.picture-compare-view \.picture-tol-overlay\s*\{[\s\S]*?display:\s*none/)
+  })
+})
