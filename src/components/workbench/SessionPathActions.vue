@@ -41,7 +41,7 @@ const { t } = useI18n()
       @click="emit('browse')"
     >
       <FolderOpen
-        :size="14"
+        :size="12"
         aria-hidden="true"
       />
       <ChevronDown
@@ -59,7 +59,7 @@ const { t } = useI18n()
       @click="emit('archive')"
     >
       <Archive
-        :size="14"
+        :size="12"
         aria-hidden="true"
       />
     </button>
@@ -74,7 +74,7 @@ const { t } = useI18n()
       @click="emit('save')"
     >
       <Save
-        :size="14"
+        :size="12"
         aria-hidden="true"
       />
     </button>

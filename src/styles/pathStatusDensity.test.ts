@@ -231,3 +231,11 @@ describe('path actions gap', () => {
     expect(css).toMatch(/\.bc-path-actions\s*\{[\s\S]*?gap:\s*2px/)
   })
 })
+
+describe('path action glyph size', () => {
+  it('sizes path action Lucide glyphs to capture 12px', () => {
+    expect(pathActions).toMatch(/FolderOpen[\s\S]*?:size="12"/)
+    expect(pathActions).toMatch(/Save[\s\S]*?:size="12"/)
+    expect(pathActions).toMatch(/Archive[\s\S]*?:size="12"/)
+  })
+})
