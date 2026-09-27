@@ -175,3 +175,20 @@ describe('picture zoom fit chrome', () => {
     expect(css).toMatch(/\.picture-compare-view \.picture-fit-glyph\s*\{[\s\S]*?width:\s*12px/)
   })
 })
+
+describe('picture stage overlay compact', () => {
+  it('hides pan/OffsetXY/transform/pixel chrome toward capture Offset/Zoom band', () => {
+    expect(pictureView).toMatch(/data-overlay-compact="capture-1to1"/)
+    expect(pictureView).toMatch(/data-testid="picture-offset-overlay-caption"/)
+    expect(pictureView).toMatch(/\.picture-controls\s*\{[\s\S]*?width:\s*min\(260px/)
+    expect(pictureView).toMatch(
+      /data-overlay-compact='capture-1to1'\] > \.picture-alignment-controls[\s\S]*?display:\s*none/,
+    )
+    expect(pictureView).toMatch(
+      /data-overlay-compact='capture-1to1'\] > \.picture-pixel-preview[\s\S]*?display:\s*none/,
+    )
+    expect(css).toMatch(
+      /\.picture-controls\[data-picture-controls='stage-overlay'\][\s\S]*?width:\s*min\(260px/,
+    )
+  })
+})
