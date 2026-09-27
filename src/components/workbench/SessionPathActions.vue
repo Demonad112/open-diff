@@ -106,6 +106,11 @@ const { t } = useI18n()
   cursor: default;
 }
 
+.bc-path-action-browse {
+  width: 32px;
+  min-width: 32px;
+}
+
 .bc-path-action:hover:not(:disabled) {
   border-color: #a0a0a0;
   background: #f0f0f0;

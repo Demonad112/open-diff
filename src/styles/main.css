@@ -1851,6 +1851,13 @@ html[data-show-path-bars='0'] .path-pair-bar {
   font-size: 11px;
 }
 
+.bc-path-row .bc-path-action-browse,
+.path-field-row .bc-path-action-browse,
+.path-pair-field .bc-path-action-browse {
+  width: 32px;
+  min-width: 32px;
+}
+
 .bc-path-row .bc-path-load,
 .bc-path-row .bc-path-swap {
   width: auto;
