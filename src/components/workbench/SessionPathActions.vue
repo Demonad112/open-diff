@@ -86,7 +86,7 @@ const { t } = useI18n()
   display: inline-flex;
   flex: 0 0 auto;
   align-items: center;
-  gap: 1px;
+  gap: 2px;
 }
 
 .bc-path-action {
