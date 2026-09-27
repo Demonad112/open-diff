@@ -97,7 +97,7 @@ describe('hex path and windowed grid chrome residual', () => {
     )
     expect(hexView).toMatch(/\.hex-path-meta-strip\s*\{[\s\S]*?background:\s*#f0f0f0/)
     expect(hexView).toMatch(
-      /\.hex-row\s*\{[\s\S]*?grid-template-columns:\s*52px minmax\(200px, 1fr\) 104px/,
+      /\.hex-row\s*\{[\s\S]*?grid-template-columns:\s*68px minmax\(200px, 1fr\) 104px/,
     )
     expect(hexView).toMatch(/\.hex-byte-selected\s*\{[\s\S]*?background:\s*#a8ffff/)
     expect(css).toMatch(/\.hex-compare-view \.hex-path-fields\s*\{[\s\S]*?min-height:\s*22px/)
@@ -186,5 +186,11 @@ describe('hex goto title residual', () => {
   it('keeps Hex Go To title on capture 11px / 18px band', () => {
     expect(hexView).toMatch(/\.hex-goto-dialog header h2\s*\{[\s\S]*?font-size:\s*11px/)
     expect(hexView).toMatch(/\.hex-goto-dialog header h2\s*\{[\s\S]*?min-height:\s*18px/)
+  })
+})
+
+describe('hex offset column width', () => {
+  it('widens Hex offset column to capture 68px band', () => {
+    expect(hexView).toMatch(/grid-template-columns:\s*68px minmax\(200px, 1fr\) 104px/)
   })
 })
