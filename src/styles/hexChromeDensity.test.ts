@@ -181,3 +181,10 @@ describe('hex byte width residual', () => {
     )
   })
 })
+
+describe('hex goto title residual', () => {
+  it('keeps Hex Go To title on capture 11px / 18px band', () => {
+    expect(hexView).toMatch(/\.hex-goto-dialog header h2\s*\{[\s\S]*?font-size:\s*11px/)
+    expect(hexView).toMatch(/\.hex-goto-dialog header h2\s*\{[\s\S]*?min-height:\s*18px/)
+  })
+})

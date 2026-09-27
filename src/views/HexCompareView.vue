@@ -1737,9 +1737,9 @@ h2 {
 }
 
 .hex-goto-dialog header h2 {
-  min-height: 20px;
+  min-height: 18px;
   margin: 0;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   line-height: 16px;
 }
