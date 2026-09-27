@@ -3186,7 +3186,7 @@ html[data-show-sidebar='1'] .sidebar {
 .about-dialog {
   display: grid;
   gap: 4px;
-  min-width: min(420px, 92vw);
+  min-width: min(360px, 92vw);
   padding: 4px 6px;
   border: 1px solid #a0a0a0;
   border-radius: 0;

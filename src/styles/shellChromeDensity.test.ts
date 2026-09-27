@@ -242,3 +242,11 @@ describe('about button border residual', () => {
     expect(source).toMatch(/\.about-dialog button\s*\{[\s\S]*?border:\s*1px solid #a0a0a0/)
   })
 })
+
+describe('about width residual', () => {
+  const source = readFileSync(resolve(__dirname, '../layouts/AppLayout.vue'), 'utf8')
+
+  it('pins About dialog min-width to capture 360px band', () => {
+    expect(source).toMatch(/\.about-dialog\s*\{[\s\S]*?min-width:\s*min\(360px/)
+  })
+})
