@@ -3218,7 +3218,7 @@ html[data-show-sidebar='1'] .sidebar {
 .about-dialog button {
   height: 18px;
   padding: 0 8px;
-  border: 1px solid var(--app-border);
+  border: 1px solid #a0a0a0;
   border-radius: 0;
 }
 
