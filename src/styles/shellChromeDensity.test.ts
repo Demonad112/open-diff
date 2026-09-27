@@ -234,3 +234,11 @@ describe('about body font residual', () => {
     expect(source).toMatch(/\.about-dialog p\s*\{[\s\S]*?font-size:\s*11px/)
   })
 })
+
+describe('about button border residual', () => {
+  const source = readFileSync(resolve(__dirname, '../layouts/AppLayout.vue'), 'utf8')
+
+  it('matches About dialog button border to capture #a0a0a0', () => {
+    expect(source).toMatch(/\.about-dialog button\s*\{[\s\S]*?border:\s*1px solid #a0a0a0/)
+  })
+})
