@@ -169,9 +169,9 @@ describe('picture zoom fit chrome', () => {
     expect(pictureView).toMatch(/data-testid="picture-zoom-one-to-one"/)
     expect(pictureView).toMatch(/data-testid="picture-tolerance-caption"/)
     expect(pictureView).toMatch(/picture-fit-glyph/)
-    expect(pictureView).toMatch(/\.picture-zoom-mode-btn\s*\{[\s\S]*?width:\s*22px/)
+    expect(pictureView).toMatch(/\.picture-zoom-mode-btn\s*\{[\s\S]*?width:\s*28px/)
     expect(pictureView).toMatch(/\.picture-zoom-mode-btn-active\s*\{[\s\S]*?background:\s*#cce4f7/)
-    expect(css).toMatch(/\.picture-compare-view \.picture-zoom-mode-btn\s*\{[\s\S]*?width:\s*22px/)
+    expect(css).toMatch(/\.picture-compare-view \.picture-zoom-mode-btn\s*\{[\s\S]*?width:\s*28px/)
     expect(css).toMatch(/\.picture-compare-view \.picture-fit-glyph\s*\{[\s\S]*?width:\s*12px/)
   })
 })
@@ -203,5 +203,14 @@ describe('picture stage Tolerance compact', () => {
     expect(pictureView).toMatch(
       /label:not\(\.picture-zoom-overlay-label, \.picture-tol-overlay-label\)/,
     )
+  })
+})
+
+describe('picture zoom mode btn size', () => {
+  it('sizes Zoom mode buttons to capture 28x26 CSS', () => {
+    expect(pictureView).toMatch(/\.picture-zoom-mode-btn\s*\{[\s\S]*?width:\s*28px/)
+    expect(pictureView).toMatch(/\.picture-zoom-mode-btn\s*\{[\s\S]*?height:\s*26px/)
+    expect(css).toMatch(/\.picture-compare-view \.picture-zoom-mode-btn\s*\{[\s\S]*?width:\s*28px/)
+    expect(css).toMatch(/\.picture-compare-view \.picture-zoom-mode-btn\s*\{[\s\S]*?height:\s*26px/)
   })
 })

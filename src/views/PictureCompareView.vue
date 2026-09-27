@@ -2318,9 +2318,9 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 22px;
-  height: 18px;
-  min-height: 18px;
+  width: 28px;
+  height: 26px;
+  min-height: 26px;
   padding: 0;
   border: 1px solid #a0a0a0;
   border-radius: 0;
