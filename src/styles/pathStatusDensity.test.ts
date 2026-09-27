@@ -224,3 +224,10 @@ describe('path actions fill', () => {
     expect(pathActions).toMatch(/background:\s*#f0f0f0/)
   })
 })
+
+describe('path actions gap', () => {
+  it('matches capture path action gap 2px', () => {
+    expect(pathActions).toMatch(/\.bc-path-actions\s*\{[\s\S]*?gap:\s*2px/)
+    expect(css).toMatch(/\.bc-path-actions\s*\{[\s\S]*?gap:\s*2px/)
+  })
+})
