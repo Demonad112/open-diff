@@ -2437,9 +2437,9 @@ html[data-show-path-bars='0'] .path-pair-bar {
 }
 
 .picture-compare-view .picture-zoom-mode-btn {
-  width: 22px !important;
-  height: 18px !important;
-  min-height: 18px !important;
+  width: 28px !important;
+  height: 26px !important;
+  min-height: 26px !important;
   padding: 0 !important;
   border: 1px solid #a0a0a0 !important;
   border-radius: 0 !important;
