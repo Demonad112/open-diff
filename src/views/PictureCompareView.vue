@@ -991,8 +991,15 @@ async function runPictureCompare(): Promise<void> {
         <section
           class="picture-controls"
           data-picture-controls="stage-overlay"
+          data-overlay-compact="capture-1to1"
           data-testid="picture-controls-stage"
         >
+          <div
+            class="picture-offset-overlay-caption"
+            data-testid="picture-offset-overlay-caption"
+          >
+            {{ $t('ui.offset') }}: ({{ alignmentOffsetX }},{{ alignmentOffsetY }})
+          </div>
           <label class="picture-zoom-overlay-label">
             <span data-testid="picture-zoom-overlay-caption">{{ $t('ui.zoom') }}: {{ zoom }}%</span>
             <div class="picture-zoom-overlay-row">
@@ -1656,17 +1663,28 @@ h2 {
   left: 4px;
   z-index: 4;
   display: grid;
-  grid-template-columns:
-    repeat(3, minmax(120px, 1fr)) auto minmax(200px, auto) minmax(160px, auto)
-    minmax(160px, auto);
+  grid-template-columns: minmax(0, 1fr);
   gap: 2px 4px;
-  width: min(560px, calc(100% - 8px));
+  width: min(260px, calc(100% - 8px));
   min-height: 20px;
   padding: 2px 4px;
   border: 0;
   border-radius: 0;
   background: rgb(46 46 35 / 0.88);
   color: #f0f0f0;
+}
+
+.picture-controls[data-overlay-compact='capture-1to1'] > label:not(.picture-zoom-overlay-label),
+.picture-controls[data-overlay-compact='capture-1to1'] > .picture-transform-tools,
+.picture-controls[data-overlay-compact='capture-1to1'] > .picture-alignment-controls,
+.picture-controls[data-overlay-compact='capture-1to1'] > .picture-pixel-preview {
+  display: none;
+}
+
+.picture-offset-overlay-caption {
+  color: #f0f0f0;
+  font-size: 11px;
+  line-height: 14px;
 }
 
 .picture-controls label {
