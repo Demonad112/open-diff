@@ -135,12 +135,12 @@ describe('hex byte cell residual', () => {
   it('keeps Hex byte/ascii cell chrome on the capture grid band', () => {
     expect(hexView).toMatch(/data-hex-rows-density="capture-1to1"/)
     expect(hexView).toMatch(/data-hex-byte-residual="capture-1to1"/)
-    expect(hexView).toMatch(/\.hex-byte\s*\{[\s\S]*?width:\s*18px/)
+    expect(hexView).toMatch(/\.hex-byte\s*\{[\s\S]*?width:\s*20px/)
     expect(hexView).toMatch(/\.hex-byte\s*\{[\s\S]*?margin-right:\s*2px/)
     expect(hexView).toMatch(/\.hex-row\s*\{[\s\S]*?line-height:\s*16px/)
     expect(hexView).toMatch(/\.hex-ascii\s*\{[\s\S]*?line-height:\s*16px/)
     expect(css).toMatch(
-      /data-hex-byte-residual='capture-1to1'\] \.hex-byte\s*\{[\s\S]*?width:\s*18px/,
+      /data-hex-byte-residual='capture-1to1'\] \.hex-byte\s*\{[\s\S]*?width:\s*20px/,
     )
     expect(css).toMatch(/\.hex-compare-view \.hex-row\s*\{[\s\S]*?line-height:\s*16px/)
     expect(hexView).not.toMatch(/min-height:\s*6px/)
@@ -170,5 +170,14 @@ describe('hex-offset-chrome border', () => {
 describe('hex offset chrome border', () => {
   it('matches capture hex offset border #c0c0c0', () => {
     expect(hexView).toMatch(/border-bottom:\s*1px solid #c0c0c0/)
+  })
+})
+
+describe('hex byte width residual', () => {
+  it('sizes Hex byte cells to capture 20px pitch band', () => {
+    expect(hexView).toMatch(/\.hex-byte\s*\{[\s\S]*?width:\s*20px/)
+    expect(css).toMatch(
+      /data-hex-byte-residual='capture-1to1'\] \.hex-byte\s*\{[\s\S]*?width:\s*20px/,
+    )
   })
 })
