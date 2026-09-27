@@ -239,3 +239,10 @@ describe('path action glyph size', () => {
     expect(pathActions).toMatch(/Archive[\s\S]*?:size="12"/)
   })
 })
+
+describe('path browse width', () => {
+  it('widens browse path action to capture 32px for folder+chevron', () => {
+    expect(pathActions).toMatch(/\.bc-path-action-browse\s*\{[\s\S]*?width:\s*32px/)
+    expect(css).toMatch(/\.bc-path-action-browse\s*\{[\s\S]*?width:\s*32px/)
+  })
+})
