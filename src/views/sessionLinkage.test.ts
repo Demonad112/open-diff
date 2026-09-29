@@ -177,6 +177,31 @@ describe('session UI to command linkage', () => {
     expect(invokeArgs('read_text_file').path).toBe('/tmp/right.txt')
   })
 
+  it('text compare loads files when Enter is pressed in a path field', async () => {
+    const wrapper = mountView(TextCompareView)
+
+    await wrapper.find('[data-testid="text-left-path"]').setValue('/tmp/left.txt')
+    await wrapper.find('[data-testid="text-right-path"]').setValue('/tmp/right.txt')
+    await wrapper.find('[data-testid="text-right-path"]').trigger('keydown', { key: 'Enter' })
+    await flushPromises()
+
+    expect(invokeCalls.map((call) => call.command)).toEqual([
+      'read_text_file',
+      'read_text_file',
+      'diff_text',
+    ])
+  })
+
+  it('text compare ignores Enter in a path field until both paths are set', async () => {
+    const wrapper = mountView(TextCompareView)
+
+    await wrapper.find('[data-testid="text-left-path"]').setValue('/tmp/left.txt')
+    await wrapper.find('[data-testid="text-left-path"]').trigger('keydown', { key: 'Enter' })
+    await flushPromises()
+
+    expect(invokeCalls.map((call) => call.command)).not.toContain('read_text_file')
+  })
+
   it('text merge loads files through merge_text_files', async () => {
     const wrapper = mountView(TextMergeView)
 

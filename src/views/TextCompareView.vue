@@ -780,6 +780,14 @@ async function loadLaunchTextFiles(leftPath: string, rightPath: string): Promise
   }
 }
 
+function loadTypedTextPaths(): void {
+  if (loading.value || !leftPathLabel.value || !rightPathLabel.value) {
+    return
+  }
+
+  void loadLaunchTextFiles(leftPathLabel.value, rightPathLabel.value)
+}
+
 function swapPaths(): void {
   const nextLeft = right.value
   const nextRight = left.value
@@ -1736,6 +1744,7 @@ function onVisibilityForDiskChange(): void {
               data-testid="text-left-path"
               :title="leftPathLabel"
               :placeholder="$t('ui.remoteUriHint')"
+              @keydown.enter="loadTypedTextPaths"
             />
             <SessionPathActions
               browse-test-id="text-browse-left"
@@ -1752,6 +1761,7 @@ function onVisibilityForDiskChange(): void {
               data-testid="text-right-path"
               :title="rightPathLabel"
               :placeholder="$t('ui.remoteUriHint')"
+              @keydown.enter="loadTypedTextPaths"
             />
             <SessionPathActions
               browse-test-id="text-browse-right"
