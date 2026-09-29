@@ -70,6 +70,12 @@ interface TauriConfig {
         upgradeCode?: string
         language?: string
       }
+      nsis?: {
+        installMode?: string
+        installerIcon?: string
+        compression?: string
+        installerHooks?: string
+      }
     }
   }
 }
@@ -105,7 +111,7 @@ describe('packagingConfig', () => {
 
     expect(config.productName).toBe('OpenDiff')
     expect(config.identifier).toBe('io.github.kygo8.open-diff')
-    expect(config.bundle.targets).toEqual(['msi'])
+    expect(config.bundle.targets).toEqual(['nsis', 'msi'])
     expect(config.bundle.icon).toContain('icons/icon.ico')
     expect(config.bundle.publisher).toBe('Open Diff Contributors')
     expect(config.bundle.homepage).toBe('https://github.com/kygo8/open-diff')
@@ -117,6 +123,29 @@ describe('packagingConfig', () => {
     })
     expect(config.bundle.windows?.wix?.upgradeCode).toBe('90ffd755-2be3-5b35-8809-0f6022d8f999')
     expect(config.bundle.windows?.wix?.language).toBe('en-US')
+  })
+
+  it('defines an all-users NSIS setup.exe with Explorer context-menu hooks', () => {
+    const config = JSON.parse(
+      readFileSync(resolve(process.cwd(), 'src-tauri/tauri.conf.json'), 'utf8'),
+    ) as TauriConfig
+    const nsis = config.bundle.windows?.nsis
+
+    expect(nsis?.installMode).toBe('perMachine')
+    expect(nsis?.installerIcon).toBe('icons/icon.ico')
+    expect(nsis?.installerHooks).toBe('windows/installer-hooks.nsh')
+
+    const hooks = readFileSync(
+      resolve(process.cwd(), 'src-tauri/windows/installer-hooks.nsh'),
+      'utf8',
+    )
+
+    for (const key of ['OpenDiff', 'OpenDiffSelectLeft']) {
+      expect(hooks).toContain(`${String.raw`Software\Classes\*\shell`}\\${key}`)
+      expect(hooks).toContain(`${String.raw`Software\Classes\Directory\shell`}\\${key}`)
+    }
+    expect(hooks).toContain('--shell-compare --select-left')
+    expect(hooks).toContain('NSIS_HOOK_POSTUNINSTALL')
   })
 
   it('enables native desktop drag-drop and grants core event capability', () => {
