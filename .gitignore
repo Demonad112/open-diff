@@ -30,3 +30,4 @@ Thumbs.db
 # Tauri generated local state
 src-tauri/.tauri/
 src-tauri/gen/schemas/
+.claude/settings.local.json
